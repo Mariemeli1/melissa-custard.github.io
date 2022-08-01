@@ -19,4 +19,4 @@
 
 ## How to run os test/os submit
 1) in terminal, type os {action}
-2) select bootcamp sessi
+2) select bootcamp session
