@@ -78,12 +78,20 @@ return newString;
  */
 /*
 I: Function that takes a string
-O: REturns a new string with a dash instead of a space in between
-C: 
-E:
+O: Returns a new string with a dash instead of a space in between
+C: replace method and toLowerCase method
+E: must have a dash instead of space and must be lower cased
 */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
+//declaring a variable
+var newString;
+/*assigning the variable to the string input and using the replace.method to 
+replace spaces with dashes and used the .tolowercase method to force it 
+to lower case*/
+newString = string.replace(/ /g, '-').toLowerCase();
+//returning the new string
+return newString;
 
 
 
@@ -102,9 +110,20 @@ function toDashCase(string) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+/*
+I: Function that takes a string and a single character
+O: Returns true if string begins with character and false if otherwise.
+C: N/A
+E: N/A
+*/
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+// creating a if else statement 
+if (string.startsWith(char).toUpperCase()) {
+    return true;
+} else {
+ return false;
+}
     
 
     // YOUR CODE ABOVE HERE //
