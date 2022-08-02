@@ -18,6 +18,12 @@
  *  c. how do you access individual characters of a String?
  *  d. how do you concatenate Strings? What operator do we use?
  */
+/*
+I: a function that takes a input
+O: returns a new string with the input in reverses
+C:you'll need a loop ; split mehtod; join methos; and reverse
+E: make sure there is a new variable and that its joined together in reverse
+*/
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //

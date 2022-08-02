@@ -250,12 +250,12 @@ E:
 */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    //using a else if statement
- if (stringOne.sort() > stringTwo.sort()) {
-     return 1;
- } 
-  if (stringTwo.sort() > stringOne.sort()) {
+    //using a if statement to compare the strings
+ if (stringOne > stringTwo) {
      return -1;
+ } 
+  if (stringOne < stringTwo) {
+     return 1;
  } 
      return 0;
  }
@@ -272,9 +272,22 @@ function sortAscending(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+/*
+I: function that takes in two strings
+O: return 1 if the first is lower in alphabetical order, -1 if it is lower and 0 if they are equal
+C: 
+E:
+*/
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    //using a if statement to compare the strings
+    if (stringOne < stringTwo) {
+        return -1;
+    } 
+     if (stringOne > stringTwo) {
+        return 1;
+    } 
+        return 0;
 
 
 
