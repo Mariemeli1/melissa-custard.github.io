@@ -119,7 +119,7 @@ E: N/A
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 // creating a if else statement 
-if (string.toLowerCase().startsWith(char)) {
+if (string.toLowerCase().startsWith(char.toLowerCase())) {
     return true;
 } else {
  return false;
@@ -143,8 +143,13 @@ if (string.toLowerCase().startsWith(char)) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
+//using else if statement 
+//using startsWith method
+    if (string.toLowerCase().endsWith(char.toLowerCase())) {
+        return true;
+    } else {
+     return false;
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -191,8 +196,8 @@ function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
 
-    
-
+args = stringOne.concat(stringTwo);
+console.log(args);
     return args;
 
 
@@ -215,7 +220,7 @@ function join(stringOne, stringTwo) {
 /*
 I: function that holds two paramters(Two Strings)
 O: Return the longest string
-C: 
+C:  ternary operator
 E:
 */
 function longest(stringOne, stringTwo) {
@@ -239,8 +244,8 @@ function longest(stringOne, stringTwo) {
  */
 /*
 I: function that takes in two strings
-O: 
-C:
+O: 1 if the first is higher in alphabetical order, -1 if it is lower and 0 if they are equal
+C: 
 E:
 */
 function sortAscending(stringOne, stringTwo) {
