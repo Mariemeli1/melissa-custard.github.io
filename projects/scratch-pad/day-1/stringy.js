@@ -119,7 +119,7 @@ E: N/A
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
 // creating a if else statement 
-if (string.startsWith(char).toUpperCase()) {
+if (string.toLowerCase().startsWith(char)) {
     return true;
 } else {
  return false;
@@ -154,10 +154,18 @@ function endsWith(string, char) {
  *
  * TIP: What's the operator to concatenate two Strings?
  */
+/*
+I: Function that takes in two paramters, (Two strings)
+O: string one and string two concatented
+C:  use concat method
+E: make sure the two strings return concatenated
+*/
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+// creating a new variable that concatentes the 2 strings together using the concat method
+var newString = stringOne.concat(stringTwo);
+// returning the concatenated string
+return newString;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -172,10 +180,25 @@ function concat(stringOne, stringTwo) {
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
+
+/*
+I: any number of strings
+O: return all of them together
+C:
+E:
+*/
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
 
+    
+
+    return args;
+
+
+   
+
+    
 
     // YOUR CODE ABOVE HERE //
 }
