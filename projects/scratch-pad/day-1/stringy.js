@@ -212,10 +212,20 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
+/*
+I: function that holds two paramters(Two Strings)
+O: Return the longest string
+C: 
+E:
+*/
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+// declaring a new variable
+    var longString;
+// using the ternary operator to compare the length of the two strings
+    longString = (stringOne.length > stringTwo.length) ? stringOne : stringTwo;
+    
+    return longString;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -227,9 +237,22 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+/*
+I: function that takes in two strings
+O: 
+C:
+E:
+*/
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    //using a else if statement
+if (stringOne.sort() > stringTwo.sort()) {
+    return 1;
+} else if (stringTwo.sort() > stringOne.sort()) {
+    return -1;
+} else if (stringOne.sort() === stringTwo.sort()) {
+    return 0;
+}
 
 
     // YOUR CODE ABOVE HERE //
