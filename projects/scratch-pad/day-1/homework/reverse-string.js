@@ -21,7 +21,19 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    
+    //created a variable that splits the input string
+    var splitString = input.split('');
+    // created a variable that takes the previous var and reverses it
+    var reverseString = splitString.reverse('');
+    //created another variable that takes the previous var and joins it together
+    var joinString = reverseString.join('')
+    // created a for loop to access the index and loop through it in reverse
+    for(var i = input.length - 1; i >= 0; i--){
+     //returning the final variable
+     return joinString;
+     
+    }
+
     
     
     
