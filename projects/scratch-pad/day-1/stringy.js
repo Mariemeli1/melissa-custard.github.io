@@ -85,13 +85,13 @@ E: must have a dash instead of space and must be lower cased
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 //declaring a variable
-var newString;
-/*assigning the variable to the string input and using the replace.method to 
-replace spaces with dashes and used the .tolowercase method to force it 
-to lower case*/
-newString = string.replace(/ /g, '-').toLowerCase();
-//returning the new string
-return newString;
+ var newString;
+ /*assigning the variable to the string input and using the replace.method to 
+// replace spaces with dashes and used the .tolowercase method to force it 
+ to lower case*/
+  newString = string.replace(/ /g, '-').toLowerCase();
+ //returning the new string
+ return newString;
 
 
 
@@ -168,9 +168,9 @@ E: make sure the two strings return concatenated
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 // creating a new variable that concatentes the 2 strings together using the concat method
-var newString = stringOne.concat(stringTwo);
-// returning the concatenated string
-return newString;
+  var newString = stringOne.concat(stringTwo);
+  // returning the concatenated string
+  return newString;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -196,9 +196,9 @@ function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
 
-args = stringOne.concat(stringTwo);
+ var output = args.join("");
 console.log(args);
-    return args;
+    return output;
 
 
    
@@ -251,17 +251,18 @@ E:
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     //using a else if statement
-if (stringOne.sort() > stringTwo.sort()) {
-    return 1;
-} else if (stringTwo.sort() > stringOne.sort()) {
-    return -1;
-} else if (stringOne.sort() === stringTwo.sort()) {
-    return 0;
-}
+ if (stringOne.sort() > stringTwo.sort()) {
+     return 1;
+ } 
+  if (stringTwo.sort() > stringOne.sort()) {
+     return -1;
+ } 
+     return 0;
+ }
 
 
     // YOUR CODE ABOVE HERE //
-}
+
 
 
 /**
