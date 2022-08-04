@@ -64,7 +64,7 @@ function makeContactList() {
         contacts.push(contact);
     },
     findContact: function(fullName){
-        //iterate thrpugh contacts
+        //iterate through contacts
         crossOriginIsolated.log(fullName);
     }
 }

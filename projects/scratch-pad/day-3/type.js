@@ -78,12 +78,11 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    if(Array.isArray(value).map() || Object.map(value)){
+    if(Array.isArray(value) || Object.map(value)){
         return true;
     } else {
         return false;
     }
-    
     
     
     // YOUR CODE ABOVE HERE //
@@ -111,8 +110,8 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
+    return 
     
-    return typeof value.toString;
     
     // YOUR CODE ABOVE HERE //
 }
