@@ -43,7 +43,7 @@ function isArray(value) {
  */
 /*
 I: A function that takes a value as its parameter
-O:
+O: True if value is an object
 C: 
 E:
 */

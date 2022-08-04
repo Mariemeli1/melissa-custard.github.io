@@ -56,12 +56,13 @@ function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
     return function(string){
-        if (string.startsWith){
+        if(string.charAt(0).toLowerCase() === startsWith.toLowerCase()){
+            return true;
     } else {
         return false;
     }
 }
-    
+//string.toUpperCase().startsWith(charAt(0).toUpperCase())
     // YOUR CODE ABOVE HERE //
 }
 
@@ -72,10 +73,15 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+    return function(string){
+        if(string.substr(-1).toLowerCase() === endsWith.toLowerCase()){
+            return true;
+    } else {
+        return false;
+    }
     
     
-    
-    
+}
     // YOUR CODE ABOVE HERE //
 }
 
@@ -88,8 +94,12 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
+    var stringArray = [];
+    stringArray.push(modifyStrings);
+    for(i = 0; i <= stringArray.length; i++){
+
+    }
+    return stringArray.prototype.replace();
     
     
     // YOUR CODE ABOVE HERE //

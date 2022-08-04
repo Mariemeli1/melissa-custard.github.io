@@ -32,10 +32,20 @@
  *          WARNING: To pass this test, the LAST full name should have NO
  *          new-line character added after it!
  */
-
+/*
+I: a factory 
+O:
+C:
+E:
+ */
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+var obj = {};
+obj.id = id;
+obj.nameFirst = nameFirst;
+obj.nameLast = nameLast;
 
+return obj;
 } 
 
 
@@ -43,17 +53,23 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
+        },
+        addContact: function(contact){
+        contacts.push(contact);
+    },
+    findContact: function(fullName){
+        //iterate thrpugh contacts
+        crossOriginIsolated.log(fullName);
     }
 }
 
-
+}
 
 
 // YOUR CODE GOES ABOVE HERE //
