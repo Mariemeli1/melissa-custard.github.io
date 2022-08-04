@@ -136,11 +136,18 @@ function printObjectValues(object) {
 /** 
  * Given an input Object, return the number of key/value pairs stored within that Object.
  */
+/*
+I: A Function that takes an object as its parameter
+O: return the number of key value pairs in an object
+C: use Object.keys method and the length method
+E: N/A
+*/
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
+//using Object.keys method and length method to get the number of key value pairs in teh object and returned it within the function 
+return Object.keys(object).length;
+
  
-
-
 
 
   
@@ -152,13 +159,23 @@ function getObjectLength(object) {
  * Given an input Object, how might we loop over the Object IN REVERSE and 
  * print its values using console.log()?
  */
+/*
+I: A function that takes in a object as its parameter
+O: Print objects values in reverse
+C: using Object.values method to access the values and using the reverse method
+ to put them in reverse and used the forEach method to call each element
+E: the keys returned in reverse
+*/
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
-  
+  //created a variable called reversedKeys that carry the values of the object in reverse
+  var reversedKeys = Object.values(object).reverse();
+//getting each key in the object and printing its values to the console
+  reversedKeys.forEach(key => {
+    console.log(key, object[key]); 
+  });
   // YOUR CODE ABOVE HERE //
+ 
 }
 
 
