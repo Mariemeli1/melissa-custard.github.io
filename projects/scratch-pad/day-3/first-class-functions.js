@@ -94,12 +94,14 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    //create a empty array that will later output a array filled with modified string
     var stringArray = [];
-    stringArray.push(modifyStrings);
-    for(i = 0; i <= stringArray.length; i++){
-
+    //iterating the strings using a for loop
+    for(var i = 0; i < strings.length; i++){
+        stringArray.push(modify(strings[i])); //using the push methos to push the modified strings into my array
     }
-    return stringArray.prototype.replace();
+    //returning the modified string array
+    return stringArray;
     
     
     // YOUR CODE ABOVE HERE //
@@ -116,12 +118,17 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    for(var i = 0; i < strings.length; i++){
+        if(test(strings[i]) === false){
+            return false;
+    }
+}
+        return true;
     
-    
-    
+         }
     
     // YOUR CODE ABOVE HERE //
-}
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
