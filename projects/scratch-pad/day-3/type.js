@@ -57,22 +57,6 @@ function isObject(value) {
 // YOUR CODE ABOVE HERE //}
 
 /** 
-* Given an input value, return true if is either an Array or an an Object 
-* intended as a collection, false if otherwise.
-* 
-* TIP: Similar to isObject, but we must return true if the value is an Array.
-*/
-function isCollection(value) {
-// YOUR CODE BELOW HERE //
-if(Array.isArray(value) || typeof value === 'object'){
-    return true;
-   } else {
-    return false;
-  }
-}
-    // YOUR CODE ABOVE HERE //
-
-/** 
  * Given an input value, return true if is either an Array or an an Object 
  * intended as a collection, false if otherwise.
  * 
@@ -112,7 +96,7 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    return typeof value === 'string';
+    return typeof value === 'value';
     
     
     // YOUR CODE ABOVE HERE //

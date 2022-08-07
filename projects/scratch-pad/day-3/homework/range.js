@@ -23,8 +23,14 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
+var output = [];
+for(var i = 0; i < start.length; i++){
+     output.push(start[i]);
+     if(start > end){
+        return output.reverse();
+     }
+}
+    return output;
     
     
     // YOUR CODE GOES ABOVE HERE //
