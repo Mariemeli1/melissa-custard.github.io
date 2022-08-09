@@ -21,30 +21,29 @@ console.log(animal);
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 var noises = [];
-noises[0] = 'Grr';
-noises.push('awhooo');
-noises.unshift('rawr');
-noises[noises.length] = "Meow";
+noises[0] = 'Bark';
+noises.push('achoo');
+noises.unshift('awhoo');
+noises[noises.length] = "woof";
 
 
 
 console.log(noises.length);
-console.log(noises.length-1, "?");
+console.log(noises.length-1);
 console.log(noises);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// animal.noises.push(noises);
-noises.push('bark');
+
+noises.push('Grr');
 noises.forEach(function(elm){
   animal.noises.push(elm);
 // console.log(elm);
 });
 
-console.log(noises);
-console.log(animal.noises);
+console.log(animal);
 
 
 /* *******************************************************************
@@ -52,9 +51,11 @@ console.log(animal.noises);
  *
  * 1. What are the different ways you can access properties on objects?
  * using bracket and dot notation
+ *  for in loop , Object.keys, object.property, object['property']
  *
  * 2. What are the different ways of accessing elements on arrays?
  * using bracket notation and the forEach method
+ * for loop, forEach(), .length, .length-1, .push()
  * *******************************************************************
  */
 
@@ -87,7 +88,7 @@ name: 'Manny',
 noises: ['bock', 'cacaw']
 }
 animals.push(waterAnimal);
-var mammal ={
+var mammal = {
   species: 'cow',
   name: 'Betsy',
   noises: ['moo', 'mah']
@@ -99,6 +100,20 @@ console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+//Array
+//I chose an array because array hold lists.
+
+var friends = [];
+function getRandom(array){
+  for(i = 0; i <= array.length; i++){
+  var isTrue = math.random()*2;
+  if(isTrue === 1){
+    friends.push(array[i])
+  }
+  }
+  
+  // friends.push(math.random(array[i]))
+}
 
 
 
