@@ -106,6 +106,9 @@ function typeOf(value) {
    if(typeof value === 'object' ) {
      return 'object';
    }
+  //  if(value === function) {
+  //   return 'function';
+  //  }
      
     
     

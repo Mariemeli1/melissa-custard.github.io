@@ -9,12 +9,12 @@
  *  parameters and returns an Array containing all integers 
  *  between the two parameters, inclusively.  For example:
  *
- *      range(8, 14);  // => [8, 9, 10, 11, 12, 13, 14]
+ *      range(8, 14); 
  *
  *  If the first argument is greater than the second, 
  *  return the range in reverse order, ie:
  *
- *      range(14, 8);  // => [14, 13, 12, 11, 10, 9, 8]
+ *      range(14, 8); 
  *
  *  TIPS:
  *  a. create something to collect the output you'll return.
@@ -23,20 +23,20 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-var output = [];
-     if(start < end){
-     for(var i = 0; i <= start.length; i++){
-       
-     }
-     return output.push(start[i]);
+    var output = [];
+    if(start < end){
+        for(var i = start; i <= end; i++){
+            output.push(i);
+        }
     }
-    if(start > end) {
-   for(var i = start.length-1;i >= 0; i--){
-   
-   }
-   return output.push(start[i]);
-}
-    
+          
+    if(start > end){
+        for(var i = start; i >= end; i--){
+            output.push(i);
+        }
+        
+    }
+    return output;
     
     // YOUR CODE GOES ABOVE HERE //
 }
