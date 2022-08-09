@@ -11,28 +11,50 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
+var animal = {};
+animal.species = 'dog';
+animal['name'] = 'Joe';
+animal.noises = [];
+console.log(animal);
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+var noises = [];
+noises[0] = 'Grr';
+noises.push('awhooo');
+noises.unshift('rawr');
+noises[noises.length] = "Meow";
 
+
+
+console.log(noises.length);
+console.log(noises.length-1, "?");
+console.log(noises);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// animal.noises.push(noises);
+noises.push('bark');
+noises.forEach(function(elm){
+  animal.noises.push(elm);
+// console.log(elm);
+});
 
+console.log(noises);
+console.log(animal.noises);
 
 
 /* *******************************************************************
  * Step 4 - Review
  *
  * 1. What are the different ways you can access properties on objects?
+ * using bracket and dot notation
  *
  * 2. What are the different ways of accessing elements on arrays?
- *
+ * using bracket notation and the forEach method
  * *******************************************************************
  */
 
@@ -49,7 +71,30 @@
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+var animals = [];
+animals.push(animal)
+console.log(animals);
+var duck = {
+  species: 'duck',
+  name: 'Jerome', 
+  noises: ['quack', 'honk', 'sneeze', 'woosh']
+}
+animals.push(duck);
+console.log(animals);
+var waterAnimal = {
+species: 'fish',
+name: 'Manny',
+noises: ['bock', 'cacaw']
+}
+animals.push(waterAnimal);
+var mammal ={
+  species: 'cow',
+  name: 'Betsy',
+  noises: ['moo', 'mah']
+}
+animals.push(mammal);
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
