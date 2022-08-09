@@ -33,7 +33,7 @@
  *          new-line character added after it!
  */
 /*
-I: a factory 
+I: a factory function that takes in 3 parameters
 O:
 C:
 E:

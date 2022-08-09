@@ -53,7 +53,6 @@ function isObject(value) {
 }
    
 
-
 // YOUR CODE ABOVE HERE //}
 
 /** 
@@ -62,15 +61,15 @@ function isObject(value) {
  * 
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
+
+
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    if(Array.isArray(value) || typeof value === 'object'){
-        return true;
-    } else {
-        return false;
-    }
-    
-    
+    if(Array.isArray(value) || Object.prototype.toString.call(value) === '[object Object]'){
+            return true;
+            } else {
+             return false;
+     }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -95,8 +94,19 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    return typeof value === 'value';
+    if(Array.isArray(value)) {
+     return 'array';
+   } 
+   if(value === null) {
+     return 'null';
+   }
+   if(value instanceof Date) {
+     return 'date';
+   }
+   if(typeof value === 'object' ) {
+     return 'object';
+   }
+     
     
     
     // YOUR CODE ABOVE HERE //
