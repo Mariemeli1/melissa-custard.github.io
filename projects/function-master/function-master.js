@@ -65,7 +65,9 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+     
+    return string.charAt(0).toUpperCase() + string.slice(1);
+     
     
 }
 
@@ -74,7 +76,10 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    //explanation
+   return string.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -82,7 +87,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    var obj = object.name;
+return "Welcome " + obj.charAt(0).toUpperCase() + obj.slice(1) + "!"; 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -98,6 +104,11 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+    if(object === object.noises){
+        return object.noises.join(" ");
+    } else {
+        return 'there are no noises';
+      }
 
 }
 

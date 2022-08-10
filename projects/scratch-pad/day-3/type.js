@@ -106,10 +106,21 @@ function typeOf(value) {
    if(typeof value === 'object' ) {
      return 'object';
    }
-  //  if(value === function) {
-  //   return 'function';
-  //  }
-     
+    if(typeof value === 'function') {
+     return 'function';
+    }
+    if(value === 'string') {
+      return 'string';
+    } 
+    if(value === 'boolean') {
+      return 'boolean';
+    }
+    if(value === undefined) {
+      return 'undefined';
+    }
+    if(typeof value === NaN) {
+      return '123';    
+    }
     
     
     // YOUR CODE ABOVE HERE //
