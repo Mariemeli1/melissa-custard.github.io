@@ -3,6 +3,12 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
+    var arr = [];
+for(var key in object){
+    arr.push(object[key]);  
+    return arr;
+    
+}
 
 } 
 
@@ -11,6 +17,10 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    var str = "";
+for(var key in object){
+
+}
 
 }
 
