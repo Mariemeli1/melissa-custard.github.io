@@ -3,12 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-    var arr = [];
-for(var key in object){
-    arr.push(object[key]);  
-    return arr;
+     var arr =[];
+     for(var key in object){
+     arr.push((object[key]));  
+     
     
-}
+ }
+ return arr;
 
 } 
 
@@ -17,27 +18,46 @@ for(var key in object){
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-    var str = "";
-for(var key in object){
+        var arr = [];
+        for(var key in object){
+            arr.push((key));
+        }
+        return arr.join(" ");
+        
 
 }
 
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+        var arr = [];
+        for(var key in object){
+           if(typeof object[key] === 'string'){
+            arr.push(object[key]);
+           } 
+            
+        }
+        
+        return arr.join(" ");
+    }
+
     
-}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if(Array.isArray(collection)){
+        return 'array';
+        } else if (Array.isArray(collection) || typeof collection === 'object'){
+         return 'object';
+ }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -45,6 +65,7 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
+    
     
 }
 
