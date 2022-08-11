@@ -95,7 +95,8 @@ return "Welcome " + obj.charAt(0).toUpperCase() + obj.slice(1) + "!";
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function profileInfo(object) {
+function profileInfo(object) { 
+    
 
 }
 
@@ -104,11 +105,15 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    if(object === object.noises){
-        return object.noises.join(" ");
-    } else {
-        return 'there are no noises';
-      }
+
+    for(var key in object){
+        if(object ){
+            return key.join(' ');
+        }else{
+            return 'there are no noises';
+        }
+    }
+    
 
 }
 
@@ -117,9 +122,16 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    var str = string.slice();
+    for(var i = 0; i <= str.length; i++){
+        if(str[i] === word){
+        return true;
+        }else{
+        return false;
+        }
 
+    }
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
