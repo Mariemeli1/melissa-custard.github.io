@@ -87,8 +87,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    var obj = object.name;
-return "Welcome " + obj.charAt(0).toUpperCase() + obj.slice(1) + "!"; 
+    var str = object.name;
+return "Welcome " + str.charAt(0).toUpperCase() + str.slice(1) + "!"; 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -96,6 +96,9 @@ return "Welcome " + obj.charAt(0).toUpperCase() + obj.slice(1) + "!";
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) { 
+    var str1 = object.name;
+    var str2 = object.species;
+    return str1.charAt(0).toUpperCase() + str1.slice(1) + " is a " + str2.charAt(0).toUpperCase() + str2.slice(1);
     
 
 }
@@ -125,22 +128,21 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-    var str = string.slice();
-    for(var i = 0; i <= str.length; i++){
-        if(word === 'string[i]'){
+        if(string.includes(word)){
         return true;
         }else{
         return false;
         }
 
     }
-}
+
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+     object.friends.push(name);
+     return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -148,7 +150,11 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if(object.friends === object.friends.includes(name)){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -156,6 +162,7 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+
 
 }
 
@@ -172,7 +179,7 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    delete object.array.property
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -180,7 +187,9 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+    return array.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
 }
 
 //////////////////////////////////////////////////////////////////////
