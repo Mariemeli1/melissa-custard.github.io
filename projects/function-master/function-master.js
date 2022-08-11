@@ -105,14 +105,11 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
-    for(var key in object){
-        if(object ){
-            return key.join(' ');
-        }else{
-            return 'there are no noises';
-        }
+    if(object.hasOwnProperty(noises)){
+        
     }
+    
+    
     
 
 }

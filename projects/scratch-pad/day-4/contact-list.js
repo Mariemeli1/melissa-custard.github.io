@@ -65,7 +65,20 @@ function makeContactList() {
     },
     findContact: function(fullName){
         //iterate through contacts
-        crossOriginIsolated.log(fullName);
+        for(var i = 0; i <= contacts.length; i++){
+           if(contacts[i] === fullName){
+            return contacts[i];
+           }
+        }
+        return undefined;
+        
+    },
+    removeContact: function(contact){
+        contacts.pop(contact);
+    },
+    printAllContactNames: function(){
+        console.log(contacts);
+        return 
     }
 }
 
