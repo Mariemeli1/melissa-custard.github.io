@@ -105,15 +105,13 @@ console.log(animals.length);
 
 var friends = [];
 function getRandom(array){
-  for(i = 0; i <= array.length; i++){
-  var isTrue = math.random()*2;
-  if(isTrue === 1){
-    friends.push(array[i])
-  }
-  }
-  
-  // friends.push(math.random(array[i]))
+ return Math.floor(Math.random()* array.length);
 }
+var rando = getRandom(animals);
+friends.push();
+console.log(friends);
+animals[1].friends = friends;
+
 
 
 
