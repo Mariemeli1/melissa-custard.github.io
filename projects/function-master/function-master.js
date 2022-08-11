@@ -105,10 +105,16 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-    if(object.hasOwnProperty(noises)){
-        
-    }
-    
+    if(object.noises){
+        if(object.noises.length !== 0){
+         return object.noises.join(" ");
+            }else{
+         return "there are no noises";
+            } 
+            }else{
+         return "there are no noises";
+             }
+     
     
     
 
@@ -121,7 +127,7 @@ function maybeNoises(object) {
 function hasWord(string, word) {
     var str = string.slice();
     for(var i = 0; i <= str.length; i++){
-        if(str[i] === word){
+        if(word === 'string[i]'){
         return true;
         }else{
         return false;
