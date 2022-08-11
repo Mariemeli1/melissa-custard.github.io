@@ -109,7 +109,7 @@ function typeOf(value) {
     if(typeof value === 'function') {
      return 'function';
     }
-    if(value === 'string') {
+    if(typeof value === 'string') {
       return 'string';
     } 
     if(value === 'boolean') {
@@ -118,8 +118,8 @@ function typeOf(value) {
     if(value === undefined) {
       return 'undefined';
     }
-    if(typeof value === NaN) {
-      return '123';    
+    if(typeof value === 'number') {
+      return 'number';    
     }
     
     
