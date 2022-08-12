@@ -150,20 +150,29 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-    if(object.friends === object.friends.includes(name)){
-        return true;
-    }else{
+    if(object.friends){
+        if(object.friends.includes(name)){
+            return true;
+        } else{
+            return false;
+        }
+    } else{
         return false;
     }
+    
 }
-
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
-
+    var list = [];
+    for(var i = 0; i <= array.length; i++){
+        if(array[i].name === name){
+            list.push(array[i].name);
+        }        
+    }        
+     return list;   
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -171,7 +180,16 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    for(var i in object){
+        if(i = key){
+            if (object.i !== value){
+                object[i] = value;
+                return object;
+            }
+        }
+    }
+    object.key = value;
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -179,8 +197,17 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    delete object.array.property
-}
+    for(var key in object){
+        for(i = 0; i <= array.length; i++){
+            if(key === array[i]){
+                delete object[key];
+            }
+        }
+
+    }
+    return object;
+}   
+  
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
