@@ -66,7 +66,7 @@ function makeContactList() {
     findContact: function(fullName){
         //iterate through contacts
         for(var i = 0; i <= contacts.length; i++){
-           if(contacts[i] === fullName){
+           if(fullName.inlcudes(contacts)){
             return contacts[i];
            }
         }
