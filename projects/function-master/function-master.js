@@ -167,13 +167,18 @@ function isFriend(name, object) {
 
 function nonFriends(name, array) {
     var list = [];
-    for(var i = 0; i <= array.length; i++){
-        if(array[i].name === name){
-            list.push(array[i].name);
-        }        
-    }        
-     return list;   
-}
+    for(var i = 0; i < array.length; i++){
+        if(name !== array[i].name && array[i].friends.indexOf(name) === -1){
+            console.log(array[i].name);
+            list.push(array[i].name);     
+        }
+    }   
+    console.log(list);        
+    return list;
+}        
+       
+
+// after the loop over the array try indexof method to check if the friends array has the name and if it does not then you want to push that name to array you are returning
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
