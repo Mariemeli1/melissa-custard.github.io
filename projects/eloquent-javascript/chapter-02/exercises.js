@@ -3,22 +3,33 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() 
- for (let triangle = "#"; triangle.length <= 7; triangle += '#'){
-console.log(triangle);
+function triangles(num) {
+  var hashtag ="#";
+  for (let i = 1; i <= num; i++){
+       //console.log(i);
+       console.log(hashtag);
+       hashtag += "#";
+       }
+       
+
+  
 }
 
-let hashtag = "#";
-while(hashtag.length < 7){
-console.log(hashtag);
-hashtag = hashtag + "#";
-}
-console.log(hashtag);
+// 
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
+  for( var i = 1; i<= 15; i++){
+    if(i % 15 == 0){
+    console.log("fizzbuzz");
+    } else if (i % 3 == 0){
+     console.log("fizz");
+    } else if (i % 5 == 0){ 
+    console.log("buzz");
+    } else console.log(i);
+    }
   
 }
 
@@ -26,9 +37,19 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-
+function drawChessboard(num) {
+  let size = 8;
+  let emptyStr = "";
+  for(let i = 0; i < num.length; i++){
+    for(let x = 0; x < num.length; x++){
+     if((i + x) % 2 === 0){
+       emptyStr
+     }
+    }
+  }
 }
+
+    
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

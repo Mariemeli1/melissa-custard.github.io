@@ -252,10 +252,10 @@ function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     //using a if statement to compare the strings
  if (stringOne > stringTwo) {
-     return -1;
+     return 1;
  } 
   if (stringOne < stringTwo) {
-     return 1;
+     return -1;
  } 
      return 0;
  }
@@ -282,10 +282,10 @@ function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     //using a if statement to compare the strings
     if (stringOne < stringTwo) {
-        return -1;
+        return 1;
     } 
      if (stringOne > stringTwo) {
-        return 1;
+        return -1;
     } 
         return 0;
 
