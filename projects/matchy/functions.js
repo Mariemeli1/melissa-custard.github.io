@@ -13,10 +13,15 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function search(arr, str){
-for(i = 0; i <= arr.length; i++){
+     for(var i = 0; i < arr.length; i++){
+        if(arr[i].name === str){
+            return arr[i];
+       }
+    }
+  return null;
     
 }
-}
+
 
 
 //////////////////////////////////////////////////////////////////////
@@ -24,7 +29,12 @@ for(i = 0; i <= arr.length; i++){
 //////////////////////////////////////////////////////////////////////
 function replace(arr, str, replaceObj){
     for(var i = 0; i <= arr.length; i++){
-
+        if(animals[i].name === str){
+            console.log(animals[i]);
+          delete animals[i];
+           animals.splice((animals[i], replaceObj));
+           console.log(animals);
+       }
     }
 }
 
@@ -32,7 +42,15 @@ function replace(arr, str, replaceObj){
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function remove(arr, str){
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i].name === str){
+            console.log(str);
+        arr.pop();
+         }
 
+    }  
+}
 
 
 //////////////////////////////////////////////////////////////////////
