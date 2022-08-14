@@ -27,14 +27,24 @@ function search(arr, str){
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function replace(arr, str, replaceObj){
-    for(var i = 0; i <= arr.length; i++){
-        if(animals[i].name === str){
-            console.log(animals[i]);
-          delete animals[i];
-           animals.splice((animals[i], replaceObj));
-           console.log(animals);
-       }
+/* 
+I: a function that takes in 3 parameters
+O: 
+C:
+E:
+*/
+//arr is an array of animals 
+//EX.)[sheep, goat, pig]
+//str representing  the name of a animal  on which to perform a search 
+//EX.)'pig'
+// replaceObj is an object that represents the replacement animal 
+//EX.) {cat: gray, fat: true, age: 1}
+
+function replace(animals, name, replacement){
+    for (i = 0; i < animals.length; i++){
+        if (name === animals[i].name){
+            animals[i] = replacement;
+        }
     }
 }
 
@@ -42,21 +52,32 @@ function replace(arr, str, replaceObj){
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function remove(arr, str){
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i].name === str){
-            console.log(str);
-        arr.pop();
-         }
-
-    }  
+function remove(animals, name){
+     for(var i = 0; i < animals.length; i++){
+         if(name === animals[i].name){
+              animals.splice(i, 1);
+              console.log(animals);
+            }
+    } 
 }
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function add(animals, animal){
+    if(animal.name.length > 0){
+    }
+    if(animal.species.length > 0){
+    }
+    for (let i = 0; i < animals.length; i++){
+    if(animal.name !== animals[i].name){
+         animals.push(animal);
+    } else {
+        return null;
+    }
+  }
+}
 
 
 /**
