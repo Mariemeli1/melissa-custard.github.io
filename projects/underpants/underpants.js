@@ -45,28 +45,28 @@ return value;
 */
 //created a function that takes in a value
 _.typeOf = function(value){
-    
+
     if(Array.isArray(value)) {
         return 'array';
-      } //if value is null return null
+      } //if value is null return its value as a string ('null')
       if(value === null) {
         return 'null';
-      }
+      }//if type of value is object return its value as a string ('object')
       if(typeof value === 'object' ) {
         return 'object';
-      }
+      }//if type of value is a function return its value as a string(' function')
        if(typeof value === 'function') {
         return 'function';
-       }
+       }//if type of value is a string return its value as a ('string')
        if(typeof value === 'string') {
          return 'string';
-       } 
-       if(value === 'boolean') {
-         return boolean;
-       }
+       } //if value is true or value is false return the type of value as a string('boolean')
+       if(value === true || value === false) {
+         return 'boolean';
+       }//if value is undefined return its value as a string('undefined')
        if(value === undefined) {
          return 'undefined';
-       }
+       }//if type of value is a number return the type of value as a string
        if(typeof value === 'number') {
          return 'number';    
        }
