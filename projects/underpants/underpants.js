@@ -20,7 +20,9 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-
+_.identity = function(value){
+return value;
+}
 
 /** _.typeOf
 * Arguments:
@@ -41,7 +43,34 @@ var _ = {};
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-
+//created a function that takes in a value
+_.typeOf = function(value){
+    
+    if(Array.isArray(value)) {
+        return 'array';
+      } //if value is null return null
+      if(value === null) {
+        return 'null';
+      }
+      if(typeof value === 'object' ) {
+        return 'object';
+      }
+       if(typeof value === 'function') {
+        return 'function';
+       }
+       if(typeof value === 'string') {
+         return 'string';
+       } 
+       if(value === 'boolean') {
+         return boolean;
+       }
+       if(value === undefined) {
+         return 'undefined';
+       }
+       if(typeof value === 'number') {
+         return 'number';    
+       }
+}
 
 /** _.first
 * Arguments:
@@ -129,7 +158,20 @@ var _ = {};
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
-
+_.each = function(collection, func){
+//determine if collection is an array
+    if(Array.isArray(collection)){
+// iterate through collection using a for loop
+for(var i = 0; i < collection.length; i++){
+//pass current item in array , current index, and collection in to func
+func(collection[i], i, collection)
+}
+    }else{ //else it is an object
+        for(let key in collection){
+            func(collection[key], key, collection)
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
