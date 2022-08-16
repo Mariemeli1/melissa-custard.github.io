@@ -44,7 +44,7 @@ return value;
 * _.typeOf([1,2,3]) -> "array"
 */
 //created a function that takes in a value
-_.typeOf = function(value){?????
+_.typeOf = function(value){
 
     if(Array.isArray(value)) {
         return 'array';
@@ -89,7 +89,20 @@ _.typeOf = function(value){?????
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
+_.first = function(array, number){
+  var emptyarr = [];
+  if(!Array.isArray(array)){
+    return emptyarr;
+  }
+  if(number !== NaN){
+    return array[0];
+  }else {
+    array.slice(0, number);
+    emptyarr.push(array);
+    
+  }
 
+}
 
 /** _.last
 * Arguments:
@@ -108,7 +121,15 @@ _.typeOf = function(value){?????
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(arr, num){
+  var emptyArr = [];
+  if(!Array.isArray(arr)){
+    return emptyArr;
+  }
+  if(num !== NaN){
+    return arr.length- 1;
+  }
+}
 
 /** _.indexOf
 * Arguments:
@@ -125,6 +146,16 @@ _.typeOf = function(value){?????
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+_.indexOf = function(array, value){
+  for(i = 0; i < array.length; i++){
+    if(value === array[i].findIndex(value)){
+      return array[i];
+    }
+  }
+
+  return -1;
+        
+}
 
 
 /** _.contains
