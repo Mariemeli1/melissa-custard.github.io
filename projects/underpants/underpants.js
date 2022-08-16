@@ -44,7 +44,7 @@ return value;
 * _.typeOf([1,2,3]) -> "array"
 */
 //created a function that takes in a value
-_.typeOf = function(value){
+_.typeOf = function(value){?
 
     if(Array.isArray(value)) {
         return 'array';
