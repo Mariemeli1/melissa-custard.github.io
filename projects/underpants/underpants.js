@@ -250,8 +250,26 @@ func(collection[i], i, collection)
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
-
+_.map = function(collection, func){
+  //create output variablme and give it vslue of a empty array
+  var output =[];
+  // determine if collection is array, else its a object
+  if(Arrayis.Array(collection)){
+// iterate through array
+for(i = 0; i < collection.length; i++){
+//push the result of invoking func on current value, index, and collection into output
+   output.push(func(collection[i], i, collection))
+}
+  } else{ //else its an object
+// iterate through object
+for(let key in collection){
+//push the result of invoking func on current value, index, and collection into output
+   output.push(func(collection[key], key, collection))
+  }
+  //return output
+  return output;
+  }
+}
 /** _.pluck
 * Arguments:
 *   1) An array of objects
