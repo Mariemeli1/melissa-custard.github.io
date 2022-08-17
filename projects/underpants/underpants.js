@@ -456,7 +456,9 @@ _.every = function(){
 var obj3 = {};
 _.extend = function(obj1, obj2){
   Object.assign(obj1, obj2)
-  
+  // if(){
+
+  // }
 return obj1;
 }
 //////////////////////////////////////////////////////////////////////
