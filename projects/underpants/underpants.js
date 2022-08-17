@@ -94,11 +94,13 @@ _.first = function(array, number){
   if(!Array.isArray(array)){
     return emptyarr;
   }
-  if(number !== NaN){
-    return array[0];
+  if(!number || number === NaN){
+    for(var i = 0; i < array.length; i++){
+      return array[i];
+    }
+   
   }else {
-    array.slice(0, number);
-    emptyarr.push(array);
+    return array[i];
     
   }
 
@@ -126,8 +128,10 @@ _.last = function(arr, num){
   if(!Array.isArray(arr)){
     return emptyArr;
   }
-  if(num === NaN){
-    return arr.length- 1;
+  if(!num || num === NaN){
+    return arr.length - 1;
+  }else {
+    return num.length-1;
   }
 }
 
@@ -147,7 +151,9 @@ _.last = function(arr, num){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 _.indexOf = function(array, value){
+  //iterate through array
   for(var i = 0; i < array.length; i++){
+    //if value 
     if(value === array[i]){
       return i;
     }
@@ -221,9 +227,12 @@ var output = [];
 //creating the function
 _.unique = function(arr){
 // iterating over the array
-for(var i = 0; i< arr.length; i++){
-  
-}
+  for(var i = 0; i < arr.length; i++){
+    if(output !== arr[i]){
+    output.push(arr[i]);
+    }
+  }
+  return output;
 }
 /** _.filter
 * Arguments:
@@ -375,6 +384,17 @@ for(let key in collection){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+_.every = function(){
+  if(func === undefined){
+    if(Array.isArray(collection)){
+      for(var i = 0; i< collection.length; i++){
+        if(!collection[i]){
+          return false;
+        }
+      }
+    }
+  }
+}
 
 
 /** _.some
@@ -433,7 +453,12 @@ for(let key in collection){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
+var obj3 = {};
+_.extend = function(obj1, obj2){
+  Object.assign(obj1, obj2)
+  
+return obj1;
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
