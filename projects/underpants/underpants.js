@@ -147,9 +147,9 @@ _.last = function(arr, num){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 _.indexOf = function(array, value){
-  for(i = 0; i < array.length; i++){
-    if(value === array[i].findIndex(value)){
-      return array[i];
+  for(var i = 0; i < array.length; i++){
+    if(value === array[i]){
+      return i;
     }
   }
 
@@ -221,16 +221,10 @@ var output = [];
 //creating the function
 _.unique = function(arr){
 // iterating over the array
-arr.forEach((c) => {
-  // adding to my output array elements that are not already in my original array so that there are no doubles
-    if (!output.includes(c)) {
-        output.push(c);
-    }
-});
-//returning my new array with all the duplicates removed from my original array
-  return output;
+for(var i = 0; i< arr.length; i++){
+  
 }
-
+}
 /** _.filter
 * Arguments:
 *   1) An array
