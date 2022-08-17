@@ -126,7 +126,7 @@ _.last = function(arr, num){
   if(!Array.isArray(arr)){
     return emptyArr;
   }
-  if(num !== NaN){
+  if(num === NaN){
     return arr.length- 1;
   }
 }
@@ -172,6 +172,9 @@ _.indexOf = function(array, value){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
+_.contains = function(arr, value){
+arr.includes(value) ? true : false
+}
 
 
 /** _.each
@@ -213,7 +216,20 @@ func(collection[i], i, collection)
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+// creating a variable and setting it to a empty array
+var output = [];
+//creating the function
+_.unique = function(arr){
+// iterating over the array
+arr.forEach((c) => {
+  // adding to my output array elements that are not already in my original array so that there are no doubles
+    if (!output.includes(c)) {
+        output.push(c);
+    }
+});
+//returning my new array with all the duplicates removed from my original array
+  return output;
+}
 
 /** _.filter
 * Arguments:
@@ -230,7 +246,21 @@ func(collection[i], i, collection)
 * Extra Credit:
 *   use _.each in your implementation
 */
+//creating a var and setting it to a empty array that will later be returned
+var output = [];
+//create a function that takes in an array and a function as its parameters
+_.filter = function(arr, func){
+//creating a for loop that will iterate through the array
+  for(var i = 0; i < arr.length; i++){
+//calling the function and passing the arguments the element its index and array
+    func(arr[i], i, arr)
+  }
+  //pushing it into my output arr
+  output.push(func(arr[i], i, arr)) === true
+//returning the new array
+return output;
 
+}
 
 /** _.reject
 * Arguments:
@@ -244,6 +274,17 @@ func(collection[i], i, collection)
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+//creating a var and setting it to a empty array that will later be returned
+var output = [];
+//creating a function that takes in parameters of an array and a function
+_.reject = function(arr, func){
+//iterate through the array
+for( var i = 0; i < arr.length; i++){
+//calling the function and passing the arguments the element its index and array
+func(arr[i], i , arr)
+}
+return output.push(func(arr[i], i, arr))
+}
 
 
 /** _.partition
@@ -264,6 +305,13 @@ func(collection[i], i, collection)
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+var output = [[],[]];
+_.partition = function(arr, func){
+//iterating through my array
+for(var i = 0; i< arr.length; i++){
+  func(arr[i], key, arr)
+}
+}
 
 
 /** _.map
