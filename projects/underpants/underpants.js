@@ -121,21 +121,22 @@ _.first = function(array, number){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 _.last = function(arr, num){
-  
+  // arrat is not an array or num is less than or equal to 0 return empty array.
   if(!Array.isArray(arr) || num <= 0){
     return [];
   }
+  //if num is more than arr.length return the whole array
   if(num > arr.length){
     return arr;
-  }
+  } //if num is not anum or num is greater than arr.length return the last element of the arrayn
   if(!num || num > arr.length){
     return arr.pop();
-  }
+  }// if num is more than or equal to 0 return arr sliced at the -num
   if(num >= 0){
     return arr.slice(-num);
   }
 
-    // (Math.max(arr.length - num, 0));// ask big dawg about this
+    // (Math.max(arr.length - num, 0));// ask Alex about this
   
 }
 
@@ -237,16 +238,21 @@ func(collection[i], i, collection)
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-// creating a variable and setting it to a empty array
-var output = [];
-//creating the function
+
+
+
+  //creating the function
 _.unique = function(arr){
-// iterating over the array
+ // creating a variable and setting it to a empty array
+  var output = [];
+// iterating over the array using a for loop
   for(var i = 0; i < arr.length; i++){
-    if(output !== arr[i]){
+    // checking if current value doesnt exist in output using indexOf method and is strictly equal to -1
+    if(_.indexOf(output, arr[i]) === -1){
+    // if true push the current index into the output array
     output.push(arr[i]);
     }
-  }
+  }//return the new array
   return output;
 }
 /** _.filter
@@ -452,6 +458,21 @@ _.every = function(){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(arr, func, seed){
+  var result;
+  if(seed !== undefined){
+    result = seed;
+    for(let i = 0; i < arr.length; i++){
+      result = func(result, arr[i], i, arr);
+    }
+  } else {
+    result = arr[0];
+    for (let i = 1; i < arr.length; i++){
+        result = func(result, arr[i], i, arr);
+    }
+  }
+  return result;
+}
 
 
 /** _.extend
