@@ -270,21 +270,25 @@ _.unique = function(arr){
 * Extra Credit:
 *   use _.each in your implementation
 */
-//creating a var and setting it to a empty array that will later be returned
-var output = [];
+
+
 //create a function that takes in an array and a function as its parameters
 _.filter = function(arr, func){
+  //creating a var and setting it to a empty array that will later be returned
+  var output = [];
 //creating a for loop that will iterate through the array
   for(var i = 0; i < arr.length; i++){
-//calling the function and passing the arguments the element its index and array
-    func(arr[i], i, arr)
+//determining if calling the function and passing the arguments the element its index and array is true 
+    if(func(arr[i], i, arr) === true)  {
+      //pushed in the current element to my output array
+      output.push(arr[i]);
+    }
   }
-  //pushing it into my output arr
-  output.push(func(arr[i], i, arr)) === true
-//returning the new array
-return output;
-
+  //returning the new array
+  return output;
 }
+
+
 
 /** _.reject
 * Arguments:
