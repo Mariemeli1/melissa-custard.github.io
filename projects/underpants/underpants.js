@@ -90,18 +90,15 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 _.first = function(array, number){
-  var emptyarr = [];
+  // if array is array return empty array
   if(!Array.isArray(array)){
-    return emptyarr;
+    return [];
   }
-  if(!number || number === NaN){
-    for(var i = 0; i < array.length; i++){
-      return array[i];
-    }
-   
-  }else {
-    return array[i];
-    
+  //if number is not a number return first element of array
+  if(!number){
+    return array[0];
+  } else { //else return the first number items of array using splice method 0 and number parameter
+    return array.splice(0, number)
   }
 
 }
@@ -124,15 +121,22 @@ _.first = function(array, number){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 _.last = function(arr, num){
-  var emptyArr = [];
-  if(!Array.isArray(arr)){
-    return emptyArr;
+  
+  if(!Array.isArray(arr) || num <= 0){
+    return [];
   }
-  if(!num || num === NaN){
-    return arr.length - 1;
-  }else {
-    return num.length-1;
+  if(num > arr.length){
+    return arr;
   }
+  if(!num || num > arr.length){
+    return arr.pop();
+  }
+  if(num >= 0){
+    return arr.slice(-num);
+  }
+
+    // (Math.max(arr.length - num, 0));// ask big dawg about this
+  
 }
 
 /** _.indexOf
@@ -179,7 +183,7 @@ _.indexOf = function(array, value){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 _.contains = function(arr, value){
-arr.includes(value) ? true : false
+arr.contains(value) ? true : false
 }
 
 
