@@ -183,7 +183,9 @@ _.indexOf = function(array, value){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 _.contains = function(arr, value){
-arr.contains(value) ? true : false
+  for(let i = 0; i < arr.length; i++){
+    return arr[i] === value ? true : false;
+  }
 }
 
 
