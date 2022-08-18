@@ -30,7 +30,18 @@ var maleCount = function(array) {
 
 };
 
-var femaleCount;
+var femaleCount = function(array){
+    var numFemales = _.reduce(array,function(accumulator, current){
+        if(current.gender === 'female'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+    return numFemales;
+};
+
+
+
 
 var oldestCustomer;
 

@@ -302,16 +302,19 @@ _.filter = function(arr, func){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-//creating a var and setting it to a empty array that will later be returned
-var output = [];
+
 //creating a function that takes in parameters of an array and a function
 _.reject = function(arr, func){
+  //creating a var and setting it to a empty array that will later be returned
+var output = [];
 //iterate through the array
-for( var i = 0; i < arr.length; i++){
+  for( var i = 0; i < arr.length; i++){
 //calling the function and passing the arguments the element its index and array
-func(arr[i], i , arr)
-}
-return output.push(func(arr[i], i, arr))
+    if(!func(arr[i], i , arr)){
+    output.push(arr[i])
+    }
+  }
+  return output;
 }
 
 
@@ -333,12 +336,21 @@ return output.push(func(arr[i], i, arr))
 *   }); -> [[2,4],[1,3,5]]
 }
 */
-var output = [[],[]];
+
 _.partition = function(arr, func){
+  var truthArr = [];
+  var falseArr = [];
+  var someArr = [];
 //iterating through my array
-for(var i = 0; i< arr.length; i++){
-  func(arr[i], key, arr)
-}
+  for(var i = 0; i < arr.length; i++){
+    if(func(arr[i], i, arr))
+     truthArr.push(arr[i]);
+  
+    if(func(arr[i], i, arr) === false){
+      falseArr.push(arr[i]);
+    }
+  }
+  return someArr.concat([truthArr], [falseArr]);
 }
 
 
@@ -419,16 +431,41 @@ _.pluck = function(arr, prop){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-_.every = function(){
+_.every = function(collection, func){
   if(func === undefined){
     if(Array.isArray(collection)){
-      for(var i = 0; i< collection.length; i++){
+      for(var i = 0; i < collection.length; i++){
         if(!collection[i]){
           return false;
         }
       }
+    } else {
+      for( let key in collection){
+        if(!collection[key]){
+          return false;
+        }
+
+      }
+
+    }
+  } else {
+    if(Array.isArray(collection)){
+      for(var i = 0; i < collection.length; i++){
+        if(func(collection[i], i, collection) === false){
+          return false;
+        }
+      }
+    } else {
+      for( let key in collection){
+        if(func(collection[key], key, collection) === false){
+          return false;
+        }
+
+      }
+
     }
   }
+      return true;
 }
 
 
@@ -452,7 +489,43 @@ _.every = function(){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection, func){
+  if(func === undefined){
+    if(Array.isArray(collection)){
+      for(var i = 0; i < collection.length; i++){
+        if(collection[i]){
+          return true;
+        }
+      }
+    } else {
+      for( let key in collection){
+        if(collection[key]){
+          return true;
+        }
 
+      }
+
+    }
+  } else {
+    if(Array.isArray(collection)){
+      for(var i = 0; i < collection.length; i++){
+        if(func(collection[i], i, collection)){
+          return true;
+        }
+      }
+    } else {
+      for( let key in collection){
+        if(func(collection[key], key, collection)){
+          return true;
+        }
+
+      }
+
+    }
+  }
+      return false;
+
+}
 
 /** _.reduce
 * Arguments:
@@ -505,14 +578,10 @@ _.reduce = function(arr, func, seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-var obj3 = {};
-_.extend = function(obj1, obj2){
-  Object.assign(obj1, obj2)
-  // if(){
 
-  // }
-return obj1;
-}
+_.extend = function(...obj){
+  return Object.assign(...obj, {});
+  }
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
