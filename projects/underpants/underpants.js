@@ -355,11 +355,11 @@ for(var i = 0; i< arr.length; i++){
 */
 _.map = function(collection, func){
   //create output variablme and give it vslue of a empty array
-  var output =[];
+  var output = [];
   // determine if collection is array, else its a object
-  if(Arrayis.Array(collection)){
+  if(Array.isArray(collection)){
 // iterate through array
-for(i = 0; i < collection.length; i++){
+for(let i = 0; i < collection.length; i++){
 //push the result of invoking func on current value, index, and collection into output
    output.push(func(collection[i], i, collection))
 }
@@ -368,10 +368,12 @@ for(i = 0; i < collection.length; i++){
 for(let key in collection){
 //push the result of invoking func on current value, index, and collection into output
    output.push(func(collection[key], key, collection))
+}
+  
   }
-  //return output
+   //return output
   return output;
-  }
+  
 }
 /** _.pluck
 * Arguments:
@@ -383,7 +385,15 @@ for(let key in collection){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-
+_.pluck = function(arr, prop){
+  //use map method to return 
+  let output = _.map(arr, function(obj){
+    //return the value at prop key in input obj
+    return obj[prop];
+  });
+  //return output
+  return output;
+}
 
 /** _.every
 * Arguments:
@@ -460,13 +470,15 @@ _.every = function(){
 */
 _.reduce = function(arr, func, seed){
   var result;
+  //determine if seed is not undefined
   if(seed !== undefined){
-    result = seed;
+    result = seed; //asign result the initial value of seed
+    //iterate using a for loop
     for(let i = 0; i < arr.length; i++){
       result = func(result, arr[i], i, arr);
     }
-  } else {
-    result = arr[0];
+  } else { // else seed is undefined
+    result = arr[0]; //asign result first value in array 
     for (let i = 1; i < arr.length; i++){
         result = func(result, arr[i], i, arr);
     }
