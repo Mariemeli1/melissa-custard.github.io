@@ -22,3 +22,6 @@ console.log(favColor); //-----> Prints pink because that is the value assigned t
 
 //3. var/let/const //
 //var
+
+
+
