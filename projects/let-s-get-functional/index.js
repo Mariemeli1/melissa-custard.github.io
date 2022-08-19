@@ -43,7 +43,13 @@ var femaleCount = function(array){
 
 
 
-var oldestCustomer;?
+var oldestCustomer = function(arr){
+    var str = '';
+ for(let i = 0; i < arr.length; i++){
+      str.push(Math.max(arr[i]));
+    }
+    return str;
+}
 
 var youngestCustomer;
 
