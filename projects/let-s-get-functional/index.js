@@ -25,7 +25,7 @@ var maleCount = function(array) {
     //invoke _.filter to return an array of only the male customers
     var males = _.filter(array, function(customer){
             return customer.gender === 'male';
-    });   //return the legnth of array
+    });   //return the length of array
             return males.length;
 
 };
@@ -40,22 +40,38 @@ var femaleCount = function(array){
     return numFemales;
 };
 
-
-
-
 var oldestCustomer = function(arr){
-    var str = '';
- for(let i = 0; i < arr.length; i++){
-      str.push(Math.max(arr[i]));
-    }
-    return str;
+    var oldPeople = _.reduce(arr, function(accumulate, customer){
+        if(customer.age > accumulate.age){
+            return customer;
+        }
+        return accumulate;
+    });
+    return oldPeople.name;
 }
 
-var youngestCustomer;
+var youngestCustomer = function(arr){
+var youngPeople = _.reduce(arr, function(accumulate, customer){
+    if(customer.age < accumulate.age){
+        return customer;
+    }
+    return accumulate;
+});
+return youngPeople.name;
+}
 
-var averageBalance;
+var averageBalance = function(arr){
+    var totalBalance = _.map(arr, function(money){
+        return averageBalance / average;
+    })
+};
 
-var firstLetterCount;
+var firstLetterCount = function(arr, letter){
+    var beginningLetter = _.filter(arr, function(letter){
+       beginningLetter.findIndex("B", "D", "F").length;
+    })
+    return beginningLetter;
+}
 
 var friendFirstLetterCount;
 
