@@ -67,15 +67,17 @@ var averageBalance = function(arr){
 };
 
 var firstLetterCount = function(arr, letter){
-    var beginningLetter = _.filter(arr, function(letter){
-       beginningLetter.findIndex("B", "D", "F").length;
+    var beginningLetter = _.indexOf(arr, function(letter){
+      var character = beginningLetter.name.toLowerCase();
     })
     return beginningLetter;
 }
 
 var friendFirstLetterCount;
 
-var friendsCount;
+var friendsCount = function(arr, name){
+    
+};
 
 var topThreeTags;
 
