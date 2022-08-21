@@ -306,9 +306,11 @@ var output = [];
   for( var i = 0; i < arr.length; i++){
 //calling the function and passing the arguments the element its index and array
     if(!func(arr[i], i , arr)){
+      //pushing the arrays elements into my output array
     output.push(arr[i])
     }
   }
+  //returning the new array
   return output;
 }
 
@@ -333,18 +335,24 @@ var output = [];
 */
 
 _.partition = function(arr, func){
+  //created 3 new variables with a value of a empty array
   var truthArr = [];
   var falseArr = [];
   var someArr = [];
 //iterating through my array
   for(var i = 0; i < arr.length; i++){
+    //if passing in arrays elements its index and the whole array into the functiion is true
     if(func(arr[i], i, arr))
+    //push in the elements into the truth array
      truthArr.push(arr[i]);
-  
+    //if passing in arrays elements its index and the whole array into the function is false 
     if(func(arr[i], i, arr) === false){
+      //push in the elements to the falseArr
       falseArr.push(arr[i]);
     }
   }
+  //return the someArr with truthArr and falseArr concated together with arrays around them which created 
+  //an array with 2 sub arrays
   return someArr.concat([truthArr], [falseArr]);
 }
 
@@ -365,7 +373,7 @@ _.partition = function(arr, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 _.map = function(collection, func){
-  //create output variablme and give it vslue of a empty array
+  //create output variable and give it value of a empty array
   var output = [];
   // determine if collection is array, else its a object
   if(Array.isArray(collection)){
@@ -397,7 +405,7 @@ for(let key in collection){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 _.pluck = function(arr, prop){
-  //use map method to return 
+  //use map method to return the objects properties for every element
   let output = _.map(arr, function(obj){
     //return the value at prop key in input obj
     return obj[prop];
