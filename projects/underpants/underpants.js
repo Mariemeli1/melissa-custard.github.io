@@ -239,8 +239,6 @@ func(collection[i], i, collection)
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-
-
   //creating the function
 _.unique = function(arr){
  // creating a variable and setting it to a empty array
@@ -279,7 +277,7 @@ _.filter = function(arr, func){
 //creating a for loop that will iterate through the array
   for(var i = 0; i < arr.length; i++){
 //determining if calling the function and passing the arguments the element its index and array is true 
-    if(func(arr[i], i, arr) === true)  {
+    if(func(arr[i], i, arr) === true){
       //pushed in the current element to my output array
       output.push(arr[i]);
     }
@@ -287,9 +285,6 @@ _.filter = function(arr, func){
   //returning the new array
   return output;
 }
-
-
-
 /** _.reject
 * Arguments:
 *   1) An array
