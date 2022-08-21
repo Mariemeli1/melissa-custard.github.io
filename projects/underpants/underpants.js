@@ -94,7 +94,7 @@ _.first = function(array, number){
   if(!Array.isArray(array)){
     return [];
   }
-  //if number is not a number return first element of array
+  //if number is not a number return first element of array 
   if(!number){
     return array[0];
   } else { //else return the first number items of array using splice method 0 and number parameter

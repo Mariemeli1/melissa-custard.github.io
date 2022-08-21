@@ -73,15 +73,55 @@ var firstLetterCount = function(arr, letter){
     return beginningLetter;
 }
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(arr, customer, letter){
+    var count = 0;
+    customer.toUpperCase();
+    letter.toUpperCase();
+    var friend = _.some(array, function(customer, letter){
+       if(customer[i] === letter){
+        count++;
+       }
+    })
+        return count;
+};
 
 var friendsCount = function(arr, name){
     
 };
 
-var topThreeTags;
+var topThreeTags = function(arr){
 
-var genderCount;
+};
+
+var genderCount = function(arr){
+    var genders = {
+        male: 0,
+        female: 0,
+        "non-binary": 0
+    }
+    var females = _.reduce(arr, function(accumulator, current){
+        if(current.gender === 'female'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+    var males = _.reduce(arr, function(accumulator, current){
+        if(current.gender === 'male'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+    var nonBinary = _.reduce(arr, function(accumulator, current){
+        if(current.gender === 'non-binary'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+    genders.male = males;
+    genders.female = females
+    genders['non-binary'] = nonBinary;
+    return genders;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
