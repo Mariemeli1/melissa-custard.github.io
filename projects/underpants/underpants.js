@@ -435,15 +435,21 @@ _.pluck = function(arr, prop){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 _.every = function(collection, func){
+  //if func is undefined
   if(func === undefined){
+    //if collection is an array
     if(Array.isArray(collection)){
+      //iterate through the collection array
       for(var i = 0; i < collection.length; i++){
+        //if the array element doesnt exist return false
         if(!collection[i]){
           return false;
         }
       }
-    } else {
+    } else { //else statement
+      //for in loop to iterate through the keys of collection
       for( let key in collection){
+        ////if the array key doesnt exist return false
         if(!collection[key]){
           return false;
         }
@@ -451,15 +457,21 @@ _.every = function(collection, func){
       }
 
     }
-  } else {
+  } else { //else
+    //if collection is array iterate through the array
     if(Array.isArray(collection)){
       for(var i = 0; i < collection.length; i++){
+        //checking if the return value for calling the function 
+        //with these parameters passed in is false , if so return false
         if(func(collection[i], i, collection) === false){
           return false;
         }
       }
-    } else {
+    } else { //else
+      //using a for in loop to iteratte through my keys
       for( let key in collection){
+       //checking if the return value for calling the function 
+       //with these parameters passed in is false , if so return false
         if(func(collection[key], key, collection) === false){
           return false;
         }
@@ -467,7 +479,7 @@ _.every = function(collection, func){
       }
 
     }
-  }
+  }//return true
       return true;
 }
 
@@ -493,15 +505,21 @@ _.every = function(collection, func){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 _.some = function(collection, func){
+   //if func is undefined
   if(func === undefined){
+    //if collection is an array
     if(Array.isArray(collection)){
+       //iterate through the collection array
       for(var i = 0; i < collection.length; i++){
+          //if the array element exist return true
         if(collection[i]){
           return true;
         }
       }
-    } else {
+    } else { //else
+      //created a for in loop that iterates through the keys of collection
       for( let key in collection){
+         //if collection has key return true
         if(collection[key]){
           return true;
         }
@@ -509,15 +527,23 @@ _.some = function(collection, func){
       }
 
     }
-  } else {
+  } else {//else
+    //if collection is an array
     if(Array.isArray(collection)){
+      //iterate through the collection array again
       for(var i = 0; i < collection.length; i++){
+         //checking if the return value for calling the function 
+        //with these parameters:the collection element,the current index and
+        //the whole array passed in is true , if so return true
         if(func(collection[i], i, collection)){
           return true;
         }
       }
-    } else {
+    } else { //else
+      //created a for in loop to iterate through the keys in collection
       for( let key in collection){
+           //checking if the return value for calling the function 
+          //with these parameters passed in is true , if so return true
         if(func(collection[key], key, collection)){
           return true;
         }
@@ -525,7 +551,7 @@ _.some = function(collection, func){
       }
 
     }
-  }
+  } //return false
       return false;
 
 }
@@ -555,6 +581,7 @@ _.reduce = function(arr, func, seed){
     result = seed; //asign result the initial value of seed
     //iterate using a for loop
     for(let i = 0; i < arr.length; i++){
+      //assign result to the function call with parameters passed in
       result = func(result, arr[i], i, arr);
     }
   } else { // else seed is undefined
