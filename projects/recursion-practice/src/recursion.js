@@ -56,6 +56,9 @@ var sumBelow = function(n) {
     if(n === 0){
       return 0;
     } 
+    if(n < 0){
+      return n + 1 + sumBelow(n + 1);
+    }
       if(n > 0){
         return n - 1 + sumBelow(n - 1);
       }
@@ -86,6 +89,9 @@ var exponent = function(base, exp) {
   if(exp === 0){
     return 1;
   }
+  if(exp < 0){
+    return 1 / exponent(base, -exp);
+  }
   if(exp === 1){
     return base;
   } else{
@@ -106,6 +112,12 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  if(string.length <= 1){
+    return string;
+}
+else {
+    return string.charAt(string.length - 1) + reverse(string.substring(0, string.length - 1));
+}
 };
 
 // 10. Write a function that determines if a string is a palindrome.
