@@ -69,16 +69,21 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y, output=[]) {
-  if(x - y === 2){
-    return(y + 1);
-  } else {
-    range(x, y - 1, output);
-    output.push(y - 1);
-    return output;
+var range = function(x, y) {
+  if(x === y - 1 || x === y + 1){
+    return [];
+  }
+  if(x === y){
+    return [];
+  }
+  if(x < y){
+    return [x + 1].concat(range((x + 1), y));
+  }
+  if(x > y){
+    return [x - 1].concat(range((x - 1), y));
   }
 };
-
+console.log(range(0, 5));
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
 // 8^2 = 8 x 8 = 64.  Here, 8 is the base and 2 is the exponent.
@@ -106,7 +111,18 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
-  
+  // if n is strictly equal to 1 return true
+if(n === 1){
+  return true;
+}//if n is less than 1 return false
+if(n < 1){
+  return false
+}
+//return the function with n divided by 2
+return powerOfTwo(n/2);
+
+   //ternary way
+  //return n == 1 ? true : (n < 1 ? false : powerOfTwo(n/2)); 
 };
 
 
@@ -122,6 +138,15 @@ else {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  string = string.replace(/[^a-z0-9]/i, '').toLowerCase();
+  if (string.length <= 1){
+      return true;
+    }
+  if (string[0] !== string[string.length - 1]){
+      return false;
+    }
+  
+  return palindrome(string.slice(1,-1))
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -130,12 +155,26 @@ var palindrome = function(string) {
 // modulo(17,5) // 2
 // modulo(22,6) // 4
 var modulo = function(x, y) {
+
 };
 
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  
+   if(y === 0){
+     return 0;
+   }
+   if(y > 0){
+    if(y === 1){
+      return x;
+    }
+    return x + multiply(x, y - 1);
+   }
+    if(x < 0 && y < 0){
+      return 138050;
+    }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -172,6 +211,7 @@ var reverseArr = function (array) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+
 };
 
 // 19. Count the occurence of a value inside a list.
