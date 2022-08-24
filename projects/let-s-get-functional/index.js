@@ -94,14 +94,14 @@ var topThreeTags = function(arr){
 };
 
 var genderCount = function(arr){
-    let countObj =_.reduce(array, function(accumulator, current){
+    let countObj =_.reduce(arr, function(accumulator, current){
         if(accumulator[current.gender]){
             accumulator[current.gender] += 1;
         } else {
             accumulator[current.gender] = 1;
         }
         return accumulator;
-    })
+    },{});
     return countObj;
 };
     
