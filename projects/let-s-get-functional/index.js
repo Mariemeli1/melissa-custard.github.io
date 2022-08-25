@@ -73,17 +73,21 @@ var firstLetterCount = function(arr, letter){
     return beginningLetter;
 }
 
-var friendFirstLetterCount = function(arr, customer, letter){
+var friendFirstLetterCount = function(array, customer, letter){
     var count = 0;
-    customer.toUpperCase();
-    letter.toUpperCase();
-    var friend = _.some(array, function(customer, letter){
-       if(customer[i] === letter){
-        count++;
-       }
-    })
-        return count;
+    var capitalize = customer.toUpperCase();
+    var capital2 = letter.toUpperCase();
+
+
+
 };
+//     var friend = _.some(array, function(customer, letter){
+//        if(customer[i] === letter){
+//         count++;
+//        }
+//     })
+//         return count;
+// };
 
 var friendsCount = function(arr, name){
     
