@@ -90,7 +90,7 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 _.first = function(array, number){
-  // if array is array return empty array
+  // if array is not array return empty array
   if(!Array.isArray(array)){
     return [];
   }

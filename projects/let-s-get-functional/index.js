@@ -77,7 +77,24 @@ var friendFirstLetterCount = function(array, customer, letter){
     var count = 0;
     var capitalize = customer.toUpperCase();
     var capital2 = letter.toUpperCase();
-
+    function friendFirstLetterCount(array, customer, letter){
+        // iterate through array
+        for (let i = 0; i < array.length; i++){
+          // determine if the current item matches the input customer
+          if (array[i].name === customer){ 
+            // array[i] = { name: 'Doris Smith', friends: [] }
+            // iterate through array[i]'s friends property
+            for (let j = 0; j < array[i].friends.length; j++){
+              // array[i].friends[j] => { name: 'Bethany' }
+      
+              // how can we add to the count variable if the current friend object's name begins with the current letter
+            }
+      
+          }
+        }
+      
+        return count;
+      }
 
 
 };
