@@ -48,38 +48,50 @@ var femaleCount = function(array){
 
 var oldestCustomer = function(arr){
     var oldPeople = _.reduce(arr, function(accumulate, customer){
+        //determining if customer age is greater than accumulator age
         if(customer.age > accumulate.age){
+            //if it is return the customer
             return customer;
         }
+        //return accumulate
         return accumulate;
     });
+    //return the function (the oldest male) and using the dot notation to get his name
     return oldPeople.name;
 }
 
 var youngestCustomer = function(arr){
 var youngPeople = _.reduce(arr, function(accumulate, customer){
+    //determining if customer age is less than accumulator age
     if(customer.age < accumulate.age){
+        //if it is return the customer
         return customer;
-    }
+    }//return accumulate
     return accumulate;
-});
+});//return the function (the youngest customer) and using the dot notation to get his name
 return youngPeople.name;
 }
 
 var averageBalance = function(arr){
     var avgBalance = _.reduce(arr, function(acc, customer){
+        //returning the accumulator value assigned to the Number vmethod which turns a value to a number
+        //using regex to remove the comma and dollar sign to just get the numbers (the balance)
     return acc += Number(customer.balance.replace(/\$|,/g, ""));
-  }, 0);
+  }, 0);//seed value of 0
+//return the function divided by the array which gives me the average balance i needed to return
   return avgBalance / arr.length;
 }
 
 var firstLetterCount = function(arr, letter){
     var beginningLetter = _.reduce(arr, function(acc, current){
+        //if the current name first letter uppercased is strictly equal to the given letter uppercased
       if(current.name.charAt(0).toUpperCase() === letter.toUpperCase()){
+        //return accumulator assign it to 1 and adds 1 for each letter capitalized from the first letter
         return acc += 1;
-      }
+      }//return accumulator
        return acc;
-    }, 0);
+    }, 0);//initial seed value of 0
+    //return my beginningLetter function
     return beginningLetter;
 }
 
@@ -104,31 +116,71 @@ var friendFirstLetterCount = function(array, customer, letter){
 
 var friendsCount = function(arr, name){
     var friendList = _.reduce(arr, function(acc, current){
-        //iterating through my
+        //iterating through my current friends property
             for(var i = 0; i < current.friends.length; i++){
+                //determining if my current name has a given name in its friends list
                 if(current.friends[i].name === name){
+                    //if so it will push the current name of the customer into my accumulator array
                     acc.push(current.name);
                 }
                
-            }
+            } //return accumulator array
             return acc;
-    },[]);
+    },[]); //return my friendList function
     return friendList;
 };
 
 var topThreeTags = function(arr){
+    //created 2 variables and set it to a empty array
+var mostCommon = [];
+var tags = [];
+//iterated through my array
+    for(let i = 0; i< arr.length; i++){
+        //iterated through my tags in my array
+        for(let j = 0; j < arr[i].tags.length; j++){
+            //pushed the current element of my array and tags anto my tags variable
+        tags.push(arr[i].tags[j]);
+        }
+    }
+    //create a object and set it to a empty object
+var object = {};
+    //iterated through my tags array
+for(var m = 0; m < tags.length; m++){
+    //checking if object has the current element of tag and if it does add and assign it to 1
+    if(object[tags[m]]){
+    object[tags[m]] += 1;
+    } else { //else assign it to 1
+    object[tags[m]] = 1;
+    }
 
-};
+} //using object.entries method to turn the object into an array
+let array = Object.entries(object);
+//using the sort method to sort the elements of array in place and return the reference to the same array, but sorted.
+    array.sort(function(a, b){
+        //minusing the lowest from the greatest
+        return b[1] - a[1];
+    });
+
+        for(var z = 0; z < 3; z++){
+            //pushing the top three values into my mostCommon array
+            mostCommon.push(array[z][0]);
+        }//returning my mostCommon array
+        return mostCommon;
+}
 
 var genderCount = function(arr){
     let countObj =_.reduce(arr, function(accumulator, current){
+        //if accumulator has a current gender
         if(accumulator[current.gender]){
+            //add and assign 1 to sccumultator for every gender there is
             accumulator[current.gender] += 1;
-        } else {
+        } else {//else
+            //return accumulators current gender to 1
             accumulator[current.gender] = 1;
-        }
+        }//return accumulator
         return accumulator;
-    },{});
+    },{});//initial seed value to an object
+    //return my countObj function
     return countObj;
 };
 
