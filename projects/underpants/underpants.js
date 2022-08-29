@@ -585,7 +585,7 @@ _.reduce = function(arr, func, seed){
       result = func(result, arr[i], i, arr);
     }
   } else { // else seed is undefined
-    result = arr[0]; //asign result first value in array 
+    result = arr[0]; //assign result first value in array 
     for (let i = 1; i < arr.length; i++){
         result = func(result, arr[i], i, arr);
     }

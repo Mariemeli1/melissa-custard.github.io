@@ -31,12 +31,18 @@ var maleCount = function(array) {
 };
 
 var femaleCount = function(array){
+    //created a var that used the reduce function with array, function as parameters and accumulater and current as thee function parameter parameters
     var numFemales = _.reduce(array,function(accumulator, current){
+     //determining if current gender is female
         if(current.gender === 'female'){
+            //if so then accumulator becomes 1 for that first female found in the array and adds 1 for each female there is 
             accumulator += 1;
-        }
+        }//returns 3 because there are  3 females in the array
+        //returns accumulator to the num females var/ reduce function
         return accumulator;
     }, 0);
+    //returns the result of numsFemale(3) to the femaleCount function
+    //give us our answer
     return numFemales;
 };
 
@@ -61,10 +67,11 @@ return youngPeople.name;
 }
 
 var averageBalance = function(arr){
-    var totalBalance = _.map(arr, function(money){
-        return averageBalance / average;
-    })
-};
+    var balance = _.reduce(arr, function(total, customer){
+    return total + customer / arr.length; 
+  }, 0);
+  return balance;
+}
 
 var firstLetterCount = function(arr, letter){
     var beginningLetter = _.indexOf(arr, function(letter){
@@ -125,34 +132,6 @@ var genderCount = function(arr){
     },{});
     return countObj;
 };
-    
-    // var genders = {
-    //     male: 0,
-    //     female: 0,
-    //     "non-binary": 0
-    // }
-    // var females = _.reduce(arr, function(accumulator, current){
-    //     if(current.gender === 'female'){
-    //         accumulator += 1;
-    //     }
-    //     return accumulator;
-    // }, 0);
-    // var males = _.reduce(arr, function(accumulator, current){
-    //     if(current.gender === 'male'){
-    //         accumulator += 1;
-    //     }
-    //     return accumulator;
-    // }, 0);
-    // var nonBinary = _.reduce(arr, function(accumulator, current){
-    //     if(current.gender === 'non-binary'){
-    //         accumulator += 1;
-    //     }
-    //     return accumulator;
-    // }, 0);
-    // genders.male = males;
-    // genders.female = females
-    // genders['non-binary'] = nonBinary;
-    // return genders;
 
 
 //////////////////////////////////////////////////////////////////////
