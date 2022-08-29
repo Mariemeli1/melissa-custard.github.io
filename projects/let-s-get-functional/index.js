@@ -67,10 +67,11 @@ return youngPeople.name;
 }
 
 var averageBalance = function(arr){
-    var balance = _.reduce(arr, function(total, customer){
-    return total + customer / arr.length; 
+    var avgBalance = _.reduce(arr, function(acc, customer){
+    acc += customer / arr.length;
+    return acc;
   }, 0);
-  return balance;
+  return avgBalance;
 }
 
 var firstLetterCount = function(arr, letter){
@@ -84,7 +85,6 @@ var friendFirstLetterCount = function(array, customer, letter){
     var count = 0;
     var capitalize = customer.toUpperCase();
     var capital2 = letter.toUpperCase();
-    function friendFirstLetterCount(array, customer, letter){
         // iterate through array
         for (let i = 0; i < array.length; i++){
           // determine if the current item matches the input customer
@@ -93,25 +93,17 @@ var friendFirstLetterCount = function(array, customer, letter){
             // iterate through array[i]'s friends property
             for (let j = 0; j < array[i].friends.length; j++){
               // array[i].friends[j] => { name: 'Bethany' }
-      
-              // how can we add to the count variable if the current friend object's name begins with the current letter
+            // how can we add to the count variable if the current friend object's name begins with the current letter
+                if(array[i].friends[j].name.startsWith([j])){
+                    count ++;
+                }
             }
       
           }
         }
       
         return count;
-      }
-
-
-};
-//     var friend = _.some(array, function(customer, letter){
-//        if(customer[i] === letter){
-//         count++;
-//        }
-//     })
-//         return count;
-// };
+      };
 
 var friendsCount = function(arr, name){
     
