@@ -84,25 +84,36 @@ var firstLetterCount = function(arr, letter){
 }
 
 var friendFirstLetterCount = function(array, customer, letter){
-    // var count = 0;
-    // var capitalize = customer.toUpperCase();
-    // var capital2 = letter.toUpperCase();
     var friendly = _.reduce(array, function(acc, current){
+         // determine if the current item matches the input customer
             if(current.name === customer){
+                // iterate through current friends property
               for(var j = 0; j < current.friends.length; j++){
+                //determine if current friends names first letter uppercased matches the given letter uppercased
                 if(current.friends[j].name.charAt(0).toUpperCase() === letter.toUpperCase()){
+                    //add and assign accumulator to 1
                     acc += 1;
                 }
 
                }    
-            }
+            }//return accumulator
              return acc;
-    }, 0);
+    }, 0);//return my friendly function
     return friendly;
 };
 
 var friendsCount = function(arr, name){
-    
+    var friendList = _.reduce(arr, function(acc, current){
+        //iterating through my
+            for(var i = 0; i < current.friends.length; i++){
+                if(current.friends[i].name === name){
+                    acc.push(current.name);
+                }
+               
+            }
+            return acc;
+    },[]);
+    return friendList;
 };
 
 var topThreeTags = function(arr){
