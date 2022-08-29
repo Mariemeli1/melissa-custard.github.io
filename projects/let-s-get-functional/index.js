@@ -68,42 +68,38 @@ return youngPeople.name;
 
 var averageBalance = function(arr){
     var avgBalance = _.reduce(arr, function(acc, customer){
-    acc += customer / arr.length;
-    return acc;
+    return acc += Number(customer.balance.replace(/\$|,/g, ""));
   }, 0);
-  return avgBalance;
+  return avgBalance / arr.length;
 }
 
 var firstLetterCount = function(arr, letter){
-    var beginningLetter = _.indexOf(arr, function(letter){
-      var character = beginningLetter.name.toLowerCase();
-    })
+    var beginningLetter = _.reduce(arr, function(acc, current){
+      if(current.name.charAt(0).toUpperCase() === letter.toUpperCase()){
+        return acc += 1;
+      }
+       return acc;
+    }, 0);
     return beginningLetter;
 }
 
 var friendFirstLetterCount = function(array, customer, letter){
-    var count = 0;
-    var capitalize = customer.toUpperCase();
-    var capital2 = letter.toUpperCase();
-        // iterate through array
-        for (let i = 0; i < array.length; i++){
-          // determine if the current item matches the input customer
-          if (array[i].name === customer){ 
-            // array[i] = { name: 'Doris Smith', friends: [] }
-            // iterate through array[i]'s friends property
-            for (let j = 0; j < array[i].friends.length; j++){
-              // array[i].friends[j] => { name: 'Bethany' }
-            // how can we add to the count variable if the current friend object's name begins with the current letter
-                if(array[i].friends[j].name.startsWith([j])){
-                    count ++;
+    // var count = 0;
+    // var capitalize = customer.toUpperCase();
+    // var capital2 = letter.toUpperCase();
+    var friendly = _.reduce(array, function(acc, current){
+            if(current.name === customer){
+              for(var j = 0; j < current.friends.length; j++){
+                if(current.friends[j].name.charAt(0).toUpperCase() === letter.toUpperCase()){
+                    acc += 1;
                 }
+
+               }    
             }
-      
-          }
-        }
-      
-        return count;
-      };
+             return acc;
+    }, 0);
+    return friendly;
+};
 
 var friendsCount = function(arr, name){
     
