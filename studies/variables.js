@@ -45,7 +45,17 @@ console.log(letter); // ----> Prints TypeError: Assignment to constant variable 
 
 //6. Hoisting
 //var/let/const
+//var declarations get hoisted to the top
+//if you try to reference var before its declared you will get a value of undefined.
+console.log(b); // ----> Prints the undefined to the console.
+ var b = 7;
+console.log(b); // ---> Prints 7 to the console.
 
+//let and const are not hoisted so if you reference before declaring you will get a reference error.
+console.log(bread); // ----> Prints ReferenceError: Cannot access 'bread' before initialization to the console.
+console.log(corn); // Prints ReferenceError: Cannot access 'corn' before initialization to the console.
+let bread = 'soft';
+const corn = 'sweet';
 
 
 
