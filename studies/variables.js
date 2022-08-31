@@ -20,8 +20,32 @@ console.log(favColor); //-----> Prints out undefined because the var hasn't been
 var favColor = 'pink';
 console.log(favColor); //-----> Prints pink because that is the value assigned to the variable favColor.
 
-//3. var/let/const //
-//var
+//3. var
+//var can be reassigned and redeclared
+var favFood = "fries";
+favFood = 'Nuggets'; 
+console.log(favFood); // -----> Prints nuggets to the console because its been reassigned.
+var favFood = 'salad';
+console.log(favFood); // ----> Prints salad to the console because its been redeclared.
+
+//4. let
+//let can be reassigned but not redeclared;
+let num = '1';
+num = '2';
+console.log(num);// ---> Prints 2 to the console.
+let num = '3'; // ----> Prints SyntaxError: Identifier 'num' has already been declared to the console
+
+//5. const
+//const can't be reassigned neither redeclared;
+const letter = 'M'; 
+letter = 'B';
+console.log(letter); // ----> Prints TypeError: Assignment to constant variable to the console.
+const letter = "Z";
+console.log(letter); // ----> Prints TypeError: Assignment to constant variable to the console.
+
+//6. Hoisting
+//var/let/const
+
 
 
 
