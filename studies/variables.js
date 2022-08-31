@@ -30,17 +30,17 @@ console.log(favFood); // ----> Prints salad to the console because its been rede
 
 //4. let
 //let can be reassigned but not redeclared;
-//HERE let num = '1';
+ let num = '1';
 num = '2';
 console.log(num);// ---> Prints 2 to the console.
-let num = '3'; // ----> Prints SyntaxError: Identifier 'num' has already been declared to the console
+let num2  = '3'; // ----> Prints SyntaxError: Identifier 'num' has already been declared to the console
 
 //5. const
 //const can't be reassigned neither redeclared;
-//HERE const letter = 'M'; 
+ const letter = 'M'; 
 letter = 'B';
 console.log(letter); // ----> Prints TypeError: Assignment to constant variable to the console.
-const letter = "Z";
+const letter1 = "Z";
 console.log(letter); // ----> Prints TypeError: Assignment to constant variable to the console.
 
 //6. Hoisting
