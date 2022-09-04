@@ -18,8 +18,52 @@ function loop() {
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
+function every(collection, func) {
+  if(func === undefined){
+    //if collection is an array
+    if(Array.isArray(collection)){
+      //iterate through the collection array
+      for(var i = 0; i < collection.length; i++){
+        //if the array element doesnt exist return false
+        if(!collection[i]){
+          return false;
+        }
+      }
+    } else { //else statement
+      //for in loop to iterate through the keys of collection
+      for( let key in collection){
+        ////if the array key doesnt exist return false
+        if(!collection[key]){
+          return false;
+        }
 
+      }
+
+    }
+  } else { //else
+    //if collection is array iterate through the array
+    if(Array.isArray(collection)){
+      for(var i = 0; i < collection.length; i++){
+        //checking if the return value for calling the function 
+        //with these parameters passed in is false , if so return false
+        if(func(collection[i], i, collection) === false){
+          return false;
+        }
+      }
+    } else { //else
+      //using a for in loop to iteratte through my keys
+      for( let key in collection){
+       //checking if the return value for calling the function 
+       //with these parameters passed in is false , if so return false
+        if(func(collection[key], key, collection) === false){
+          return false;
+        }
+
+      }
+
+    }
+  }//return true
+      return true;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
