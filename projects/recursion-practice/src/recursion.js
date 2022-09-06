@@ -230,20 +230,26 @@ var reverseArr = function (array, output=[]) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length, output=[]) {
-  if(length !== value){
+  if(length === 0){
     return output;
   }
 
-   output.push(length);
+   output.push(value);
     
-    return buildList(value, length, output);
+    return buildList(value, length - 1, output);
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
-
+var countOccurrence = function(array, value, count=0) {
+  if(array.length === 0){
+   return count;
+  }
+   if(array[0] === value){
+     count++;
+  }
+  return countOccurrence(array.slice(1), value, count);
 };
 
 // 20. Write a recursive version of map.
@@ -283,6 +289,10 @@ var replaceKeysInObj = function(obj, key, newKey) {
 // fibonacci(5);  // [0, 1, 1, 2, 3, 5]
 // Note:  The 0 is not counted.
 var fibonacci = function(n) {
+  if (n <= 1) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
 };
 
 // 25. Return the Fibonacci number located at index n of the Fibonacci sequence.
@@ -291,17 +301,43 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
+  if (n === 1) {
+    return n;
+  }
+  if(n < 0){
+
+    return null;
+  }
+  return nthFibo(n - 1) + nthFibo(n - 2);
+
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, output=[]) {
+  if(input.length === 0){
+    return output;
+  }
+  output.push(input[0].toUpperCase());
+  return capitalizeWords(input.slice(1), output)
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function(array) {
+var capitalizeFirst = function(array, output=[]) {
+  
+  if(array.length === 0){
+   return output;
+  }
+  var hold = array[0];
+  var words = hold.charAt(0).toUpperCase(); 
+  hold = hold.split('')
+  hold = hold.splice(1);
+  hold.unshift(words);
+  hold = hold.join('');
+  output.push(hold);
+  return capitalizeFirst(array.slice(1), output);
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -323,7 +359,16 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
+var letterTally = function(str, obj={}) {
+  if(str.length === 0){
+    return obj;
+  }
+  if(obj[str[0]]){
+    obj[str[0]] += 1;
+  } else{
+    obj[str[0]] = 1;
+  }
+  return letterTally(str.slice(1), obj);
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
@@ -331,7 +376,19 @@ var letterTally = function(str, obj) {
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function(list) {
+var compress = function(list, output=[]) {
+
+  if (list.length === 0) {
+    return output;
+} 
+if (list.length === 1) {
+    output.push(list[0]);
+    return output;
+}
+if (list[0] !== list[1]) {
+    output.push(list[0])
+}
+return compress(list.slice(1), output);
 };
 
 // 32. Augment every element in a list with a new value where each element is an array
@@ -343,21 +400,77 @@ var augmentElements = function(array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {
+var minimizeZeroes = function(array, output=[]) {
+  if(array.length === 0){
+    return output;
+  }
+  if(output[output.length - 1] !== array[0]){
+    output.push(array[0]);
+  }
+  return minimizeZeroes(array.slice(1), output);
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
+var alternateSign = function(array, output=[]) {
+  if(array.length === 0){
+    return output;
+  }
+  if(array[0] > 0){
+    if(array[1] < 0){
+      output.push(array[0]);
+      output.push(array[1]);
+    } else {
+      output.push(array[0]);
+      output.push(array[1] * -1);
+    }
+
+  } else {
+    if(array[1] < 0){
+      output.push(array[0] * -1);
+      output.push(array[1]);
+    } else {
+        output.push(array[0] * -1);
+        output.push(array[1] * -1);
+    }
+  }
+   return alternateSign(array.slice(2), output);
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
+var numToText = function(str, base) {
+  if (str.length === 0) return '';
+  var tempStr = numToText(str.substring(0, str.length-1));
+  var replace;
+  switch (str[str.length-1]) {
+    case '1': replace = 'one';
+      break;
+    case '2': replace = 'two';
+      break;
+    case '3': replace = 'three';
+      break;
+    case '4': replace = 'four';
+      break;
+    case '5': replace = 'five';
+      break;
+    case '6': replace = 'six';
+      break;
+    case '7': replace = 'seven';
+      break;
+    case '8': replace = 'eight';
+      break;
+    case '9': replace = 'nine';
+      break;
+    default: replace = str[str.length-1];
+      break;
+  }
+  return tempStr + replace;
 };
+
 
 // *** EXTRA CREDIT ***
 
