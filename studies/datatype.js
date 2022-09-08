@@ -6,10 +6,14 @@
  * 1. Our simple data types are strings, booleans, undefined, null, numbers : NaN, infinity and -infinity.
  * Our complex data types are arrays, objects, and functions.
  * 3. Complex data types are containers that can contain bot simple and complex datatypes.
- * 4.  Primitive values are copied by there value and complex values are copied by their reference.
+ * 4. Primitive values are copied by there value and complex values are copied by their reference.
  * Primitive types are immutable, complex types only have an immutable reference, but their value can 
  * change over time.
+ * Copied by value is when you have no access to the memory address only to the actual value.
+ * Copy by reference is when you assign a variable, it is a reference to an object not the object itself.
+ * when you copy an object both variables will point to the same address.
  */
+
 //String//
 var cat = 'Ava'; //Ava is a string.
 
