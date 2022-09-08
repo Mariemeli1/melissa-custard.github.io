@@ -20,6 +20,8 @@ var cat = 'Ava'; //Ava is a string.
 //Boolean//
 var imHungry = true; 
 var imFull = false;
+ //Boolean Expression
+  (10 > 9) //true;
 // Both true and false are booleans.
 
 //Undefined//

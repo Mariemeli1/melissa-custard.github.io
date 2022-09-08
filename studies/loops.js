@@ -1,13 +1,16 @@
 /**
  * LOOPS:
  * 
- * 0.Loops are used in JavaScript to perform repeated tasks based on a condition. 
+ * 0. Loops are used in JavaScript to perform repeated tasks based on a condition. 
  * Conditions typically return true or false.
- * A loop will continue running until the defined condition returns false.
- * 1. For loops need a initial expression, a condition expression, a increment expression and a statement.
+ * 1. A loop will continue running until the defined condition returns false.
  * For loops loop through a block of code a number of times
  * 2. A while loop executes a statement as long as the test condition evaluates to true.
  * 3. For in loops iterate through an object in order to get its key/value pairs.
+ * 4. For loops are comprised of 3 statements:
+ * start: initializes counting variable
+ * stop: defines a condition that when false stops the loop
+ * update: defines how to increment or decrement the counting variable
  */
 
 

@@ -17,9 +17,9 @@
 // Parameters
 // Function body
 // Return statement
-function name(parameter){
+function name(parameter){ //parameter is a placeholder for an input
     //function body//
-return statement;
+return statement; // return statement
 }
 
 //2. Function call/invocation/execution//
@@ -32,7 +32,15 @@ function add(x, y){
     return x + y;
 }
 
-//4. Function Scope//
+//4. Function Expression//
+// The main difference between a function expression and a function declaration is the function name
+// which can be omitted in function expressions to create anonymous functions.
+//Function expressions in JavaScript are not hoisted, unlike function declarations. You can't use function
+// expressions before you create them:
+var functionName = function() {
+};
+
+//5. Function Scope//
 // Functions can access variables in the parent scope but not the other way around.
 var num = 2; //variable declared in global scope/parent scope
 
@@ -41,7 +49,7 @@ function myFunc(){
 }
 console.log(myFunc())//--> Prints 4 to the console.
 
-//5. Function Closure//
+//6. Function Closure//
  //A closure is a function having access to the parent scope, even after the parent function has closed.
 function myFunction(){
     var a = 2;

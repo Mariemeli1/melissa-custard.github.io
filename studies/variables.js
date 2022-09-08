@@ -57,5 +57,13 @@ console.log(corn); // Prints ReferenceError: Cannot access 'corn' before initial
 let bread = 'soft';
 const corn = 'sweet';
 
+//7. Scope 
+// value can't be accessed outside the if statement when they are declared with let or const.
+if (a === 1){
+    let b = 22; // Let/const keywords are blockscoped
+}
+console.log(b); //Prints ReferenceError: b is not defined
+
+
 
 
