@@ -9,7 +9,6 @@
  *  be given to the function at call time.
  * 3. Functions can take as many parameters as needed or none at all. The amount of arguments in the
  * function call must be the same amount as parameters.
- * 4. 
  */
 
 //1. Function Declaration//
